@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chef Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: '#f3f3f2',
+              'primary-dark': '#333333',
+            },
+            fontFamily: {
+              sans: ['Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'YuGothic', 'Yu Gothic', 'Meiryo', 'sans-serif'],
+              serif: ['Cormorant Garamond', 'Noto Serif JP', 'serif'],
+            },
+            letterSpacing: {
+              'extra-widest': '0.3em',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Reset iOS default input styling for square corners */
+      input[type="text"],
+      input[type="number"],
+      input[type="url"],
+      input[type="search"],
+      textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0;
+      }
+
+      /* Prevent auto-zoom on mobile inputs by setting font-size to 16px */
+      @media (max-width: 767px) {
+        input[type="text"],
+        input[type="number"],
+        input[type="url"],
+        input[type="search"],
+        textarea {
+          font-size: 16px !important;
+        }
+      }
+
+      /* Override Tailwind's default spin animation to slow it down to 3s.
+         The default 'spin' keyframes are already clockwise. */
+      .animate-spin {
+        animation: spin 3s linear infinite;
+      }
+
+      /* Define counter-clockwise animation used for the swap button */
+      @keyframes reverse-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+      }
+      .animate-reverse-spin {
+        animation: reverse-spin 3s linear infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^18.2.0/",
+    "react/": "https://esm.sh/react@^18.2.0/",
+    "react": "https://esm.sh/react@^18.2.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.10.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-base text-gray-800 font-serif">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx?v=2024072721"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

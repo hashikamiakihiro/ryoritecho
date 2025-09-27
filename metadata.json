@@ -1,0 +1,8 @@
+{
+  "name": "AI Chef Assistant",
+  "description": "An application to automate home cooking tasks. Register recipes from photos, create weekly meal plans, and generate shopping lists based on your inventory.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "prompt": ""
+}
