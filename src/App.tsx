@@ -301,7 +301,7 @@ const PhotoAddRecipeModal: React.FC<{ isOpen: boolean; onClose: () => void; onAd
             setPreviews([]);
             setCoverImageIndex(0);
         }
-    }, [isOpen, previews]);
+    }, [isOpen]);
 
     return (
         <ModalBase isOpen={isOpen} onClose={onClose} className="max-w-xl">

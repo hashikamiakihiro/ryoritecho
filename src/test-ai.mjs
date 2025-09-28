@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import 'dotenv/config';
+import "dotenv/config";
 
 const API_KEY = process.env.VITE_GEMINI_KEY;
 if (!API_KEY) {
@@ -13,13 +13,12 @@ async function listModels() {
   try {
     // これはGoogle AIのAPIクライアントの隠れた機能ですが、これでモデル一覧が取得できます
     const result = await genAI.getGenerativeModel({ model: "" })._listModels();
-    
+
     console.log("--- 利用可能なモデルリスト ---");
     for (const model of result.models) {
-        console.log(`- ${model.name}`);
+      console.log(`- ${model.name}`);
     }
     console.log("--------------------------");
-
   } catch (error) {
     console.error("モデルリストの取得中にエラー:", error.message);
   }
